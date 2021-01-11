@@ -1,0 +1,100 @@
+.landingPage{
+    min-height: 92vh;
+    background-color: black;
+    display: flex;
+    position: relative;
+}
+
+.landingPage__left{
+    width: 85%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.landingPage__leftContent{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+}
+.landingPage__left h1{
+    color: white;
+    letter-spacing: 1px;
+    font-size: 50px;
+}
+.landingPage__left h4{
+    color: rgb(146, 140, 140);
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.landingPage__left span{
+    color: red;
+}
+.landingPage__left button{
+    font-size: medium;
+    width: 180px;
+    padding: 10px 10px;
+    color: white;
+    background-color: red;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.landingPage__left button:hover{
+    color: rgb(255, 0, 0);
+    border:1px solid rgb(255, 255, 255);
+    background: transparent;
+}
+/* SVG CSS */
+.phone{
+    /* width: 70%; */
+    position: fixed;
+    bottom: -3%;
+    right: -10%;
+    transform: scale(.97);
+    opacity: .8;
+}
+@media screen and (max-width:1255px){
+    .phone{
+        bottom: -10%;
+        right: -15%;
+        transform: scale(.8);
+        opacity: .5;
+    }
+}
+@media screen and (max-width:1100px){
+    .phone{
+        display: none;
+    }
+    .landingPage__left{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .landingPage::before{
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        color: #000;
+        width: 100vw;
+        height: 92vh;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    .landingPage{
+        background-image: url("../images/Pic1.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+}
+@media screen and (max-width:650px){
+    .landingPage__left h1{
+        font-size: 35px;
+    }
+    .landingPage__left h4{
+        font-size: 15px;
+    }
+}

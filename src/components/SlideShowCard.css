@@ -1,0 +1,33 @@
+.slideShowCard{
+    min-width: 210px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.slideShowCard__upper{
+    height: 160px;
+}
+.slideShowCard__upper img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.slideShowCard__bottom{
+    height: 65px;
+    padding: 10px;
+    background-color: rgb(68, 68, 68);
+}
+.slideShowCard__bottom h6{
+    color: white;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

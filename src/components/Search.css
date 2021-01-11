@@ -1,0 +1,81 @@
+.search{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+.search__field{
+    padding: 6px 12px;
+    box-shadow:3px 3px 5px 6px #ccc;
+    min-width:35%;
+    background-color: white;
+}
+
+form{
+    display: flex;
+    align-items: center;
+}
+input{
+    border:none;
+    padding: 5px 5px;
+    width: 80%;
+    outline: none;
+}
+.search__field button{
+    padding: .5rem .5rem;
+    width:20%;
+    border:none;
+    color:white;
+    background-color: black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+form> .MuiSvgIcon-root{
+    display: none !important;
+}
+
+@media screen and (max-width:1000px){
+    input{
+        width:80%;
+    }
+    .search__field>form>button{
+        width: 20%;
+    }
+}
+@media screen and (max-width:930px){
+    .search__field{
+        width:60%;
+    }
+    input{
+        width: 95%;
+    }
+    .search__field>form>button{
+        display:none;
+    }
+    form> .MuiSvgIcon-root{
+        display: inline-block !important;
+        color: black;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    form > svg:hover{
+        padding: 1px 1px;
+        border-radius: 50%;
+    }
+}
+
+.news__section{
+    display:flex;
+    width:100%;
+    margin:20px 0;
+}
+
+.cards__section{
+    display:flex;
+    justify-content: space-evenly;
+    width:85%;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 15px 0px;
+}
