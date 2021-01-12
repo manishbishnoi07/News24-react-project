@@ -17,7 +17,7 @@ function App() {
   const fetchNews=()=>{
     const requestOne = Axios.get("http://newsapi.org/v2/top-headlines?category=entertainment&pageSize=13&apiKey=233d5143ca60452b91210d3155b12d8d")
     const requestTwo = Axios.get("http://newsapi.org/v2/top-headlines?category=business&pageSize=13&apiKey=233d5143ca60452b91210d3155b12d8d")
-    const requestThree=Axios.get("http://newsapi.org/v2/top-headlines?category=sports&apiKey=233d5143ca60452b91210d3155b12d8d")
+    const requestThree=Axios.get("https://newsapi.org/v2/top-headlines?category=sports&apiKey=233d5143ca60452b91210d3155b12d8d")
     
     Axios.all([requestOne, requestTwo,requestThree]).then(Axios.spread((...responses) => {
         const data1=responses[0].data
