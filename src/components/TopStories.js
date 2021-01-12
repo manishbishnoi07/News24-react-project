@@ -5,9 +5,6 @@ import Axios from "axios"
 import Option from "./Option"
 import "./TopStories.css"
 import Carousel from './Carousel';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import IconButton from '@material-ui/core/IconButton';
 import Skeleton from "./CustomSkeleton"
 
 const TopStories = () => {
@@ -28,7 +25,7 @@ const TopStories = () => {
         })
         setTimeout(()=>{
             setLoading(false)
-        },100)
+        },300)
     }
 
     useEffect(()=>{
