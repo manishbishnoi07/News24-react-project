@@ -15,7 +15,7 @@ import {
 
 Modal.setAppElement("#root");
 
-const Card = ({title,description,url,imgUrl,date}) => {
+const Card = ({title,description,url,image,date}) => {
     const [open,setOpen]=useState(false)
     return (
         <div className="card">
@@ -61,7 +61,7 @@ const Card = ({title,description,url,imgUrl,date}) => {
                     </div>
                 </Modal>
 
-                <img src={imgUrl} alt="news pic"/>
+                <img src={image} alt="news pic"/>
                 <div className="overlay"></div>
             </div>
             <div className="card__down">

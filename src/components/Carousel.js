@@ -62,9 +62,9 @@ const Carousel = ({worldNewsData,loading}) => {
                  <NavigateNextIcon />
              </IconButton>
              <div ref={styleRef} className="image__container" >
-                 {worldNewsData.map(({urlToImage,title,description},index)=>(
+                 {worldNewsData.map(({image,title,description},index)=>(
                      <div className='slide' key={index}>
-                         <img className="carousel__img" src={urlToImage} alt="news"/>
+                         <img className="carousel__img" src={image} alt="news"/>
                          <div className="content">
                              <h4>{title}</h4> 
                          </div> 

@@ -19,8 +19,8 @@ const TopStoriesRight = () => {
     }
 
     const fetchNews= ()=>{
-        const requestOne = Axios.get("https://newsapi.org/v2/top-headlines?category=health&pageSize=15&apiKey=233d5143ca60452b91210d3155b12d8d")
-        const requestTwo = Axios.get("https://newsapi.org/v2/top-headlines?category=technology&pageSize=15&apiKey=233d5143ca60452b91210d3155b12d8d")
+        const requestOne = Axios.get("https://gnews.io/api/v4/top-headlines?topic=health&lang=en&token=3037748e24f9cf7745cca8649a65bdf8")
+        const requestTwo = Axios.get("https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=3037748e24f9cf7745cca8649a65bdf8")
         
         Axios.all([requestOne, requestTwo]).then(Axios.spread((...responses) => {
             const data1=responses[0].data

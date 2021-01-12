@@ -81,8 +81,8 @@
     "area6 area5"
     "area6 area7"
     "area6 area7"
-    "area8 area7"
-    "area8 area7";
+    ".     area7"
+    ".     area7";
     
 }
 .optionArea{
@@ -118,12 +118,6 @@
     grid-area: area7;
 }
 
-.paginate{
-    grid-area: area8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 @media screen and (max-width:1070px){

@@ -1,10 +1,9 @@
 import React, {useRef } from 'react'
 import "./Option.css"
-const Option = ({setCountry,setCurrentPage}) => {
+const Option = ({setCountry}) => {
     const ref=useRef(null)
     const selectCountry=(e)=>{
         setCountry(e.target.value)
-        setCurrentPage(1)
         ref.current.size=1;
         ref.current.blur();
         ref.current.className=""
@@ -20,7 +19,6 @@ const Option = ({setCountry,setCurrentPage}) => {
             <h5>Select Country :</h5>
             <div className="options">
                 <select defaultValue="in" ref={ref} onBlur={selectCountry}  onFocus={changeHeight} onChange={selectCountry}>
-                    <option value="ar">Argentina</option>
                     <option value="au">Australia</option>
                     <option value="br">Brazil</option>
                     <option value="ca">Canada</option>
@@ -29,8 +27,9 @@ const Option = ({setCountry,setCurrentPage}) => {
                     <option value="de">Germany</option>
                     <option value="in" >India</option>
                     <option value="il">Israel</option>
+                    <option value="it">Italy</option>
                     <option value="jp">Japan</option>
-                    <option value="nz">New Zealand</option>
+                    <option value="pk">Pakistan</option>
                     <option value="ru">Russia</option>
                     <option value="gb">United Kingdom</option>
                     <option value="us">United States</option>

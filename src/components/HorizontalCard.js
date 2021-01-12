@@ -4,7 +4,7 @@ const HorizontalCard = (props,ref) => {
     return (
         <div className={`horizontalCard ${props.className}`}>
             <div ref={ref} className="horizontalCard__leftPart">
-                <img src={props.urlToImage} alt='news'/>
+                <img src={props.image} alt='news'/>
             </div>
             <div className="horizontalCard__rightPart">
                     <h3>{props.title}</h3>

@@ -36,7 +36,7 @@ const Search = () => {
 
     useEffect(()=>{
         const getNews= async ()=>{
-            const {data}=await Axios.get(`https://newsapi.org/v2/top-headlines?q=${find}&apiKey=233d5143ca60452b91210d3155b12d8d`)
+            const {data}=await Axios.get(`https://gnews.io/api/v4/top-headlines?q=${find}&lang=en&token=3037748e24f9cf7745cca8649a65bdf8`)
             if(data && data.articles.length===0){
                 setTimeout(()=>{
                     setLoading(false)
@@ -84,7 +84,7 @@ const Search = () => {
                 <div className="news__section">
                     <div className="cards__section">
                     {news.map((item,index)=>(
-                        <Card key={index} title={item.title} description={item.description} url={item.url} imgUrl={item.urlToImage} date={item.publishedAt}/>
+                        <Card key={index} title={item.title} description={item.description} url={item.url} image={item.image} date={item.publishedAt}/>
                     ))}                    
                     </div>
                 </div>

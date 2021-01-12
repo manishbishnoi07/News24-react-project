@@ -10,7 +10,7 @@ const Sports = (props) => {
             <div className="news__section">
                 <div className="cards__section">
                 {sports.map((item,index)=>(
-                    <Card key={index} title={item.title} description={item.description} url={item.url} imgUrl={item.urlToImage} date={item.publishedAt}/>
+                    <Card key={index} title={item.title} description={item.description} url={item.url} image={item.image} date={item.publishedAt}/>
                 ))}                    
                 </div>
             </div>
