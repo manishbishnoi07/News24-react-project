@@ -7,7 +7,7 @@ import "./TopStories.css"
 import Carousel from './Carousel';
 import Skeleton from "./CustomSkeleton"
 
-const TopStories = () => {
+const TopStories = (props) => {
     const [loading,setLoading]=useState(true)
     const [worldNewsData,setWorldNewsData]=useState([1,2,3,4,5,6,7,8])
     const [country,setCountry]=useState("in")
@@ -50,15 +50,15 @@ const TopStories = () => {
                             <Option key="123" className="optionArea" setCountry={setCountry}/>   
                             {newData.map((props,index)=>{
                                    return loading===true?
-                                        <Skeleton count={4} key={index} className={`left__horizontalCard grid${index}`}/>:
-                                        <HorizontalCard flag {...props} className={`left__horizontalCard grid${index}`} key={index}/>
+                                    <Skeleton count={4} key={index} className={`left__horizontalCard grid${index}`}/>:
+                                    <HorizontalCard flag {...props} className={`left__horizontalCard grid${index}`} key={index}/>
                             })}
                         </div>
                     </div>
                 </div>
                             
                 <div className="topStories__right">
-                    <TopStoriesRight/>  
+                    <TopStoriesRight {...props}/>  
                 </div>
                 
                
