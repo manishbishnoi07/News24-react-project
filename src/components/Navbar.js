@@ -3,7 +3,7 @@ import "./Navbar.css"
 import MenuTwoToneIcon from '@material-ui/icons/MenuTwoTone';
 import CloseIcon from '@material-ui/icons/Close';
 import {NavLink} from "react-router-dom"
-const Navbar = ({sports,business,entertainment}) => {
+const Navbar = () => {
     const [active,setActive]=useState(false)
     
     useEffect(()=>{
@@ -38,8 +38,8 @@ const Navbar = ({sports,business,entertainment}) => {
                 </div>
                 <ul  className={`${active===true?'active':''}`}>
                     <li className={`${active===true?'fade':''}`}><NavLink onClick={close}  to="/topstories" activeClassName="selectedLink">Top Stories</NavLink></li>
-                    <li className={`${active===true?'fade':''}`}><NavLink onClick={close} to={{pathname:"/sports",state:sports}} activeClassName="selectedLink">Sports</NavLink></li>
-                    <li className={`${active===true?'fade':''}`}><NavLink onClick={close} to={{pathname:"/more",state:{business,entertainment}}} activeClassName="selectedLink">More</NavLink></li>
+                    <li className={`${active===true?'fade':''}`}><NavLink onClick={close} to="/sports" activeClassName="selectedLink">Sports</NavLink></li>
+                    <li className={`${active===true?'fade':''}`}><NavLink onClick={close} to="/more" activeClassName="selectedLink">More</NavLink></li>
                     <li className={`${active===true?'fade':''}`}><NavLink onClick={close}  to="/search" activeClassName="selectedLink">Search</NavLink></li>
                 </ul>
                 <span onClick={mobileMenu}>{active===true?<CloseIcon/>:<MenuTwoToneIcon/>}</span>

@@ -7,28 +7,47 @@ import "./TopStories.css"
 import Carousel from './Carousel';
 import Skeleton from "./CustomSkeleton"
 
-const TopStories = (props) => {
+const TopStories = () => {
+    
+    const [health,setHealth]=useState([])
+    const [tech,setTech]=useState([])
     const [loading,setLoading]=useState(true)
     const [worldNewsData,setWorldNewsData]=useState([1,2,3,4,5,6,7,8])
     const [country,setCountry]=useState("in")
     const newData=worldNewsData.slice(0,8)
 
+  useEffect(()=>{
     const fetchNews=()=>{
-        setLoading(true)
-        Axios.get(`https://gnews.io/api/v4/top-headlines?country=${country}&token=a432a2ee1e29bbb1f1a1e86849d6c15e`) 
-        .then(response=>{
-            const {data}=response
-            setWorldNewsData(data.articles)
+        const requestOne = Axios.get("https://gnews.io/api/v4/top-headlines?topic=health&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+        const requestTwo = Axios.get("https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+        
+        Axios.all([requestOne,requestTwo]).then(Axios.spread((...responses) => {
+            const data1=responses[0].data
+            const data2=responses[1].data
+            setHealth(data1.articles)
+            setTech(data2.articles)
+        })).catch(errors => {
+            console.log(errors)
         })
-        .catch(error=>{
-            console.log(error)
-        })
-        setTimeout(()=>{
-            setLoading(false)
-        },300)
-    }
+      }
+    fetchNews();
+  },[])  
 
     useEffect(()=>{
+        const fetchNews=()=>{
+            setLoading(true)
+            Axios.get(`https://gnews.io/api/v4/top-headlines?country=${country}&token=a432a2ee1e29bbb1f1a1e86849d6c15e`) 
+            .then(response=>{
+                const {data}=response
+                setWorldNewsData(data.articles)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+            setTimeout(()=>{
+                setLoading(false)
+            },300)
+        }
         fetchNews()
     },[country])
 

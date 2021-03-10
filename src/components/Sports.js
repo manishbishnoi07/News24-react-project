@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Sports.css"
 import Card from "./Card"
+import Axios from "axios"
 
-
-const Sports = (props) => {
-    const sports=props.location.state
+const Sports = () => {
+    const [sports,setSports]=useState([])
+    useEffect(()=>{
+        const fetchNews=()=>{
+            Axios.get("https://gnews.io/api/v4/top-headlines?topic=sports&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+            .then(res=>{
+                const {data}=res
+                setSports(data.articles)
+            })
+            .catch(errors => {
+                console.log(errors)
+            })
+          }
+        fetchNews();
+    },[])
     return (
         <div className="search">
             <div className="news__section">
