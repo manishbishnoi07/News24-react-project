@@ -15,7 +15,7 @@ const TopStories = (props) => {
 
     const fetchNews=()=>{
         setLoading(true)
-        Axios.get(`https://gnews.io/api/v4/top-headlines?country=${country}&token=a432a2ee1e29bbb1f1a1e86849d6c15e`)
+        Axios.get(`https://gnews.io/api/v4/top-headlines?country=${country}&token=a432a2ee1e29bbb1f1a1e86849d6c15e`) 
         .then(response=>{
             const {data}=response
             setWorldNewsData(data.articles)
