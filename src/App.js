@@ -42,6 +42,7 @@ function App() {
   useEffect(()=>{
     fetchNews();
   },[])
+  
   return (
     <div className="app">
       <Router>
