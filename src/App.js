@@ -54,8 +54,7 @@ function App() {
           <Route path="/search" component={Search}/>  
           <Route path="/sports" component={Sports}/>  
           <Route path="/more" component={More}/>  
-        </Switch>
-        
+        </Switch>    
       </Router>
     </div>
   );

@@ -7,6 +7,7 @@ import Axios from "axios"
 import Card from "./Card"
 import Loader from "./Loader"
 
+
 const Search = () => {
     const [string,setString]=useState("")
     const [find,setFind]=useState("modi")
