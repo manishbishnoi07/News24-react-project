@@ -5,7 +5,6 @@ import CloseIcon from '@material-ui/icons/Close';
 import {NavLink} from "react-router-dom"
 const Navbar = () => {
     const [active,setActive]=useState(false)
-    
     useEffect(()=>{
         if(active){
             document.body.style.overflow="hidden"

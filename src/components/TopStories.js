@@ -51,6 +51,7 @@ const TopStories = () => {
         fetchNews()
     },[country])
 
+
     return (
         
         <div className="topStories">
@@ -77,7 +78,7 @@ const TopStories = () => {
                 </div>
                             
                 <div className="topStories__right">
-                    <TopStoriesRight {...props}/>  
+                    <TopStoriesRight health={health} tech={tech}/>  
                 </div>
                 
                

@@ -18,6 +18,7 @@ const Sports = () => {
           }
         fetchNews();
     },[])
+
     return (
         <div className="search">
             <div className="news__section">
