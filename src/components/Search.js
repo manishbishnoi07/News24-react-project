@@ -35,7 +35,7 @@ const Search = () => {
 
     useEffect(()=>{
         const getNews= async ()=>{
-            const {data}=await Axios.get(`https://gnews.io/api/v4/top-headlines?q=${find}&lang=en&token=de90a8a1182b37955781fc4509b27d3c`)
+            const {data}=await Axios.get(`https://gnews.io/api/v4/top-headlines?q=${find}&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e`)
             if(data && data.articles.length===0){
                 setTimeout(()=>{
                     setLoading(false)

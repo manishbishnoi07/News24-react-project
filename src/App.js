@@ -17,11 +17,11 @@ function App() {
   const [tech,setTech]=useState([])
 
   const fetchNews=()=>{
-    const requestOne = Axios.get("https://gnews.io/api/v4/top-headlines?topic=entertainment&lang=en&token=de90a8a1182b37955781fc4509b27d3c")
-    const requestTwo = Axios.get("https://gnews.io/api/v4/top-headlines?topic=business&lang=en&token=de90a8a1182b37955781fc4509b27d3c")
-    const requestThree=Axios.get("https://gnews.io/api/v4/top-headlines?topic=sports&lang=en&token=de90a8a1182b37955781fc4509b27d3c")
-    const requestFour = Axios.get("https://gnews.io/api/v4/top-headlines?topic=health&lang=en&token=de90a8a1182b37955781fc4509b27d3c")
-    const requestFive = Axios.get("https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=de90a8a1182b37955781fc4509b27d3c")
+    const requestOne = Axios.get("https://gnews.io/api/v4/top-headlines?topic=entertainment&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+    const requestTwo = Axios.get("https://gnews.io/api/v4/top-headlines?topic=business&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+    const requestThree=Axios.get("https://gnews.io/api/v4/top-headlines?topic=sports&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+    const requestFour = Axios.get("https://gnews.io/api/v4/top-headlines?topic=health&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
+    const requestFive = Axios.get("https://gnews.io/api/v4/top-headlines?topic=technology&lang=en&token=a432a2ee1e29bbb1f1a1e86849d6c15e")
     
     Axios.all([requestOne, requestTwo,requestThree,requestFour,requestFive]).then(Axios.spread((...responses) => {
         const data1=responses[0].data
@@ -42,7 +42,7 @@ function App() {
   useEffect(()=>{
     fetchNews();
   },[])
-  
+
   return (
     <div className="app">
       <Router>
